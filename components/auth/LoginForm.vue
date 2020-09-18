@@ -32,24 +32,17 @@ export default {
   },
   methods: {
     handleLogin () {
-      try {
-        this.$auth.loginWith('local', { data: this.form }).then(() => {
-          this.$message({
-            message: 'Login success',
-            type: 'success'
-          })
-        }).then(() => {
-          this.$message({
-            message: 'Failed to login',
-            type: 'danger'
-          })
-        })
-      } catch (err) {
+      this.$auth.loginWith('local', { data: this.form }).then(() => {
         this.$message({
-          message: `Error when try to login: ${err}`,
+          message: 'Login success',
           type: 'success'
         })
-      }
+      }).catch((error) => {
+        this.$message({
+          message: `Failed to login: ${error}`,
+          type: 'danger'
+        })
+      })
     }
   }
 }
