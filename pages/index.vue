@@ -1,8 +1,8 @@
 <template>
   <el-container>
     <el-header>
-      <el-menu mode="horizontal">
-        <el-menu-item index="1">
+      <el-menu mode="horizontal" router>
+        <el-menu-item index="/">
           Home
         </el-menu-item>
         <el-submenu index="2">
@@ -10,10 +10,10 @@
             <template slot="title">
               {{ $auth.user.name }}
             </template>
-            <el-menu-item index="2-1">
+            <el-menu-item index="/profile">
               Profile
             </el-menu-item>
-            <el-menu-item @click="logout">
+            <el-menu-item index="2-1" @click="logout">
               Logout
             </el-menu-item>
           </template>
@@ -21,10 +21,10 @@
             <template slot="title">
               Account
             </template>
-            <el-menu-item index="2-1">
+            <el-menu-item index="/login">
               Login
             </el-menu-item>
-            <el-menu-item index="2-2">
+            <el-menu-item index="/register">
               Register
             </el-menu-item>
           </template>
