@@ -57,9 +57,9 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'http://blog0-erakomp.co.id:8081/api/auth/login', method: 'post', propertyName: 'access_token' },
+          login: { url: 'https://www.erakomp.co.id:4443/api/user', method: 'post', propertyName: 'token' },
           logout: { url: 'http://blog0-erakomp.co.id:8081/api/auth/logout', method: 'post' },
-          user: { url: 'http://blog0-erakomp.co.id:8081/api/auth/user', method: 'get', propertyName: 'user' }
+          user: { url: 'https://www.erakomp.co.id:4443/api/user', method: 'get', propertyName: 'data' }
         }
       }
     }
